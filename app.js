@@ -72,7 +72,7 @@ capitol.render();
 var alki = new Cookies('Alki', 2, 16, 4.6);
 alki.render();
 
-var button = document.getElementById('btn');
+var addNewLocation = document.getElementById('add-location');
 
 
 function handleForm(e){
@@ -81,8 +81,9 @@ function handleForm(e){
   var minimum = parseInt(e.target.min.value);
   var maximum = parseInt(e.target.max.value);
   var average = parseInt(e.target.avg.value);
+  document.getElementById('add-location').reset();
   var newStore = new Cookies(location, minimum, maximum, average);
   newStore.render();
 }
 
-button.addEventListener('submit', handleForm);
+addNewLocation.addEventListener('submit', handleForm);
