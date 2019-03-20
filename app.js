@@ -71,3 +71,18 @@ var capitol = new Cookies('Capitol Hill', 20, 38, 2.3);
 capitol.render();
 var alki = new Cookies('Alki', 2, 16, 4.6);
 alki.render();
+
+var button = document.getElementById('btn');
+
+
+function handleForm(e){
+  e.preventDefault();
+  var location = e.target.loc.value;
+  var minimum = parseInt(e.target.min.value);
+  var maximum = parseInt(e.target.max.value);
+  var average = parseInt(e.target.avg.value);
+  var newStore = new Cookies(location, minimum, maximum, average);
+  newStore.render();
+}
+
+button.addEventListener('submit', handleForm);
