@@ -1,5 +1,13 @@
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
+var stores = [
+  new Cookies ('First and Pike', 23, 65, 6.3),
+  new Cookies ('SeaTac Airport', 3, 24, 1.2),
+  new Cookies ('Seattle Center', 11, 38, 3.7),
+  new Cookies ('Capitol Hill', 20, 38, 2.3),
+  new Cookies ('Alki', 2, 16, 4.6),
+];
+
 function Cookies(locationName, minCustomersPerHour, maxCustomersPerHour, avgCookiesPerSale) {
   this.locationName = locationName,
   this.minCustomersPerHour = minCustomersPerHour,
@@ -60,18 +68,36 @@ function createTable() {
   grandTotal.textContent = 'Total';
   tableRow.appendChild(grandTotal);
 }
+function footerTotal(){
+  var tableOne = document.getElementsByTagName('table')[0];
+  console.log(tableOne);
+  var footerRow = document.createElement('tr');
+  var footerTitle = document.createElement('td');
+  footerTitle.textContent = 'Total';
+  footerRow.appendChild(footerTitle);
+  var hourTotal = 0;
+  for(var i = 0; i < hours.length; i++){
+    var hourlyTotal = document.createElement('td');
+    hourTotal = 0;
+    stores.forEach(function(store){
+      hourTotal += store.cookiesEachHour[i];
+    });
+    console.log(hourTotal);
+    hourlyTotal.textContent = hourTotal;
+    footerRow.appendChild(hourlyTotal);
+  }  
+  // for(var j = 0; j < totals.length; j++) {
+  //   
+  //  
+  // }
+  tableOne.appendChild(footerRow);
+}
 createTable();
-var firstAndPike = new Cookies('First and Pike', 23, 65, 6.3);
-firstAndPike.render();
-var seatac = new Cookies('SeaTac Airport', 3, 24, 1.2);
-seatac.render();
-var seattle = new Cookies('Seattle Center', 11, 38, 3.7);
-seattle.render();
-var capitol = new Cookies('Capitol Hill', 20, 38, 2.3);
-capitol.render();
-var alki = new Cookies('Alki', 2, 16, 4.6);
-alki.render();
 
+for(var i = 0;  i < stores.length;i++){
+  stores[i].render();
+}
+footerTotal();
 var addNewLocation = document.getElementById('add-location');
 
 
@@ -84,6 +110,7 @@ function handleForm(e){
   document.getElementById('add-location').reset();
   var newStore = new Cookies(location, minimum, maximum, average);
   newStore.render();
+  stores.push(newStore);
 }
 
 addNewLocation.addEventListener('submit', handleForm);
