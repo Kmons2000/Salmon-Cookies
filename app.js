@@ -36,7 +36,7 @@ Cookies.prototype.render = function() {
   this.calcCustomersEachHours();
   this.calcCookiesEachHour();
   this.calcTotalDailyCookies();
-  var table = document.getElementsByTagName('table')[0];
+  var table = document.getElementsByTagName('tbody')[0];
   var row = document.createElement('tr');
   table.appendChild(row);
   var location = document.createElement('td');
@@ -53,6 +53,10 @@ Cookies.prototype.render = function() {
 };
 function createTable() {
   var table = document.createElement('table');
+  var tbody = document.createElement('tbody');
+  table.appendChild(tbody);
+  var tfoot = document.createElement('tfoot');
+  table.appendChild(tfoot);
   document.body.appendChild(table);
   var tableRow = document.createElement('tr');
   var header = document.createElement('th');
@@ -63,13 +67,13 @@ function createTable() {
     header.textContent = hours[i];
     tableRow.appendChild(header);
   }
-  table.appendChild(tableRow);
+  tbody.appendChild(tableRow);
   var grandTotal = document.createElement('th');
   grandTotal.textContent = 'Total';
   tableRow.appendChild(grandTotal);
 }
 function footerTotal(){
-  var tableOne = document.getElementsByTagName('table')[0];
+  var tableOne = document.getElementsByTagName('tfoot')[0];
   console.log(tableOne);
   var footerRow = document.createElement('tr');
   var footerTitle = document.createElement('td');
