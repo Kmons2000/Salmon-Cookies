@@ -3,3 +3,14 @@ td {
     text-align: center;
     padding: 5px;
 }
+
+input{
+    display: block;
+  }
+  button{
+    margin-top:5px;
+  }
+
+  fieldset{
+      width:250px;
+  }
