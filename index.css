@@ -1,6 +1,70 @@
 html {
     background-color:#66a0ff;
 }
+
 header {
-    font-size: 30px;
+    font-size: 35px;
+    font-weight: bold;
 }
+
+td {
+    border: 1px solid;
+    text-align: center;
+    padding: 5px;
+    font-size:20px;
+}
+
+input{
+    display: block;
+  }
+  button{
+    margin-top:5px;
+  }
+
+  fieldset{
+      width:250px;
+  }
+  label {
+      font-size:18px
+  }
+
+  nav.flow {
+      background: #fff;
+      position: relative;
+  }
+
+  nav a.flow {
+      font-size: 30px;
+      border: 2px dotted salmon;
+      position: absolute;
+  }
+
+  img.ugly{
+      margin-left: 60px;
+  }
+
+  nav a {
+    font-size: 30px;
+    border: 2px dotted salmon;
+  }
+
+  img.cookie {
+      height:40vh;
+      margin-top:5px;
+      border: 3px dotted salmon;
+  }
+
+  img.family {
+      display: block;
+      margin-left: 22%;
+      margin-right: 33%;
+  }
+
+  p {
+      font-size:20px;
+  }
+
+  section.info {
+    background-color: salmon;
+  }
+
