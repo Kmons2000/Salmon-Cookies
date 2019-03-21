@@ -86,10 +86,7 @@ function footerTotal(){
     hourlyTotal.textContent = hourTotal;
     footerRow.appendChild(hourlyTotal);
   }  
-  // for(var j = 0; j < totals.length; j++) {
-  //   
-  //  
-  // }
+
   tableOne.appendChild(footerRow);
 }
 createTable();
