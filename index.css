@@ -68,3 +68,14 @@ input{
     background-color: salmon;
   }
 
+  ul li {
+      list-style: none;
+      display: inline;
+      margin: 5px 50px;
+      border: 1px solid salmon;
+      font-size: 30px;
+  }
+
+  li:hover {
+      background-color: lightpink;
+  }
